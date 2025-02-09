@@ -1,0 +1,45 @@
+h1 {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 30px;
+}
+
+.card-container {
+	display: flex;
+	gap: 30px;
+	justify-content: center;
+	padding: 2.5rem;
+}
+
+.card {
+	border: 2px solid #ddd;
+	padding: 30px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.3s;
+	width: 180px;
+	text-align: center;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+}
+
+.card.active {
+	border-color: #2196f3;
+	background-color: #f0f8ff;
+	box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2);
+}
+
+.icon {
+	font-size: 3.4rem;
+	margin-bottom: 10px;
+}
+
+#selection-status {
+	text-align: center;
+	font-family: Arial, sans-serif;
+	color: #666;
+	margin-top: 1.5rem;
+}

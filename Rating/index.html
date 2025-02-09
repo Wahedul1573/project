@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>Animated Star Rating</title>
+
+    <link rel="canonical" href="https://codepen.io/jkantner/pen/BarvVNa">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;display=swap'>
+  
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="core.js"></script>
+</head>
+
+<body translate="no">
+  <form class="rating">
+	<div class="rating__stars">
+		<input id="rating-1" class="rating__input rating__input-1" type="radio" name="rating" value="1">
+		<input id="rating-2" class="rating__input rating__input-2" type="radio" name="rating" value="2">
+		<input id="rating-3" class="rating__input rating__input-3" type="radio" name="rating" value="3">
+		<input id="rating-4" class="rating__input rating__input-4" type="radio" name="rating" value="4">
+		<input id="rating-5" class="rating__input rating__input-5" type="radio" name="rating" value="5">
+		<label class="rating__label" for="rating-1">
+			<svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+				<g transform="translate(16,16)">
+					<circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+				</g>
+				<g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<g transform="translate(16,16) rotate(180)">
+						<polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+						<polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+					</g>
+					<g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+						<polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+					</g>
+				</g>
+			</svg>
+			<span class="rating__sr">1 star—Terrible</span>
+		</label>
+		<label class="rating__label" for="rating-2">
+			<svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+				<g transform="translate(16,16)">
+					<circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+				</g>
+				<g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<g transform="translate(16,16) rotate(180)">
+						<polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+						<polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+					</g>
+					<g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+						<polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+					</g>
+				</g>
+			</svg>
+			<span class="rating__sr">2 stars—Bad</span>
+		</label>
+		<label class="rating__label" for="rating-3">
+			<svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+				<g transform="translate(16,16)">
+					<circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+				</g>
+				<g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<g transform="translate(16,16) rotate(180)">
+						<polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+						<polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+					</g>
+					<g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+						<polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+					</g>
+				</g>
+			</svg>
+			<span class="rating__sr">3 stars—OK</span>
+		</label>
+		<label class="rating__label" for="rating-4">
+			<svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+				<g transform="translate(16,16)">
+					<circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+				</g>
+				<g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<g transform="translate(16,16) rotate(180)">
+						<polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+						<polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+					</g>
+					<g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+						<polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+					</g>
+				</g>
+			</svg>
+			<span class="rating__sr">4 stars—Good</span>
+		</label>
+		<label class="rating__label" for="rating-5">
+			<svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+				<g transform="translate(16,16)">
+					<circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+				</g>
+				<g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<g transform="translate(16,16) rotate(180)">
+						<polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+						<polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+					</g>
+					<g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+						<polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+						<polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+					</g>
+				</g>
+			</svg>
+			<span class="rating__sr">5 stars—Excellent</span>
+		</label>
+		<p class="rating__display" data-rating="1" hidden>Terrible</p>
+		<p class="rating__display" data-rating="2" hidden>Bad</p>
+		<p class="rating__display" data-rating="3" hidden>OK</p>
+		<p class="rating__display" data-rating="4" hidden>Good</p>
+		<p class="rating__display" data-rating="5" hidden>Excellent</p>
+	</div>
+</form>
+  
+      <script id="rendered-js" >
+window.addEventListener("DOMContentLoaded", () => {
+  const starRating = new StarRating("form");
+});
+
+class StarRating {
+  constructor(qs) {
+    this.ratings = [
+    { id: 1, name: "Terrible" },
+    { id: 2, name: "Bad" },
+    { id: 3, name: "OK" },
+    { id: 4, name: "Good" },
+    { id: 5, name: "Excellent" }];
+
+    this.rating = null;
+    this.el = document.querySelector(qs);
+
+    this.init();
+  }
+  init() {
+    this.el?.addEventListener("change", this.updateRating.bind(this));
+
+    // stop Firefox from preserving form data between refreshes
+    try {
+      this.el?.reset();
+    } catch (err) {
+      console.error("Element isn’t a form.");
+    }
+  }
+  updateRating(e) {
+    // clear animation delays
+    Array.from(this.el.querySelectorAll(`[for*="rating"]`)).forEach(el => {
+      el.className = "rating__label";
+    });
+
+    const ratingObject = this.ratings.find(r => r.id === +e.target.value);
+    const prevRatingID = this.rating?.id || 0;
+
+    let delay = 0;
+    this.rating = ratingObject;
+    this.ratings.forEach(rating => {
+      const { id } = rating;
+
+      // add the delays
+      const ratingLabel = this.el.querySelector(`[for="rating-${id}"]`);
+
+      if (id > prevRatingID + 1 && id <= this.rating.id) {
+        ++delay;
+        ratingLabel.classList.add(`rating__label--delay${delay}`);
+      }
+
+      // hide ratings to not read, show the one to read
+      const ratingTextEl = this.el.querySelector(`[data-rating="${id}"]`);
+
+      if (this.rating.id !== id)
+      ratingTextEl.setAttribute("hidden", true);else
+
+      ratingTextEl.removeAttribute("hidden");
+    });
+  }}
+//# sourceURL=pen.js
+    </script>
+
+  
+</body>
+
+</html>

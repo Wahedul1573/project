@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>Travel website with inverted border-radius #scss #js</title>
+
+    <link rel="canonical" href="https://codepen.io/kristen17/pen/poMzXob">
+  
+  
+  
+  
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Moderustic&family=SUSE:wght@600&display=swap");
+:root {
+  --clr-white: #fff;
+  --clr-black: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--clr-white);
+  font-family: "Moderustic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+ul li {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--clr-white);
+  position: relative;
+  transform: translatey(0);
+  transition: 0.2s ease-in-out;
+}
+ul li:hover {
+  transform: translatey(-0.625rem);
+  cursor: pointer;
+}
+ul li::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.2);
+}
+ul li span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 0.6rem;
+  color: var(--clr-white);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul li + li {
+  margin-left: -0.625rem;
+}
+ul img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+main {
+  padding-block: min(20vh, 2rem);
+  width: calc(min(70rem, 90%));
+  margin-inline: auto;
+  color: var(--clr-black);
+  position: relative;
+}
+@media screen and (min-width: 40rem) {
+  main .heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+  }
+}
+main .heading h1 {
+  letter-spacing: 0.025em;
+  font-size: clamp(2.5rem, 1.6351rem + 4.3243vw, 6.5rem);
+  line-height: 1;
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+main .heading aside {
+  margin-top: 1.5em;
+  max-width: 16.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+@media screen and (min-width: 40rem) {
+  main .heading aside {
+    margin-top: 3em;
+  }
+}
+main .heading aside p {
+  font-size: 0.9rem;
+  color: var(--clr-black);
+  line-height: 1.5;
+}
+main .container {
+  margin-top: 2em;
+  display: grid;
+  gap: 1.5rem;
+}
+@media screen and (min-width: 40rem) {
+  main .container {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3.5em;
+    gap: 2rem;
+  }
+}
+main .card {
+  padding-block: 1rem;
+  background: var(--clr-white);
+  border-radius: 1.2rem;
+  position: relative;
+  height: 24rem;
+}
+@media screen and (min-width: 53rem) {
+  main .card {
+    border-radius: 1.8rem;
+  }
+}
+main .card p {
+  position: absolute;
+  right: 0;
+  top: -1.25rem;
+}
+main .card p a {
+  font-size: 0.9rem;
+  display: inline-block;
+  color: var(--clr-black);
+}
+main .card p a:hover {
+  font-weight: 600;
+}
+main .card .card-inner {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border-bottom-right-radius: 0;
+}
+main .card .card-inner .box {
+  width: 100%;
+  height: 100%;
+  background: var(--clr-white);
+  border-radius: 1.2rem;
+  overflow: hidden;
+}
+main .card .card-inner .box .videoBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+main .card .card-inner .box .videoBox iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+main .card .card-inner .box .imgBox {
+  position: absolute;
+  inset: 0;
+}
+main .card .card-inner .box .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+@media screen and (min-width: 53rem) {
+  main .card .card-inner .box .imgBox img {
+    border-radius: 1.6rem;
+  }
+}
+main .card .card-inner .box .more {
+  position: absolute;
+  top: -0.375rem;
+  right: 0;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--clr-white);
+  padding: 0.625rem 0 0.625rem 0.625rem;
+  border-bottom-left-radius: 1rem;
+}
+main .card .card-inner .box .more::before {
+  position: absolute;
+  content: "";
+  top: 0.375rem;
+  left: -1.188rem;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: 0.313rem 0.313rem 0px 0.313rem var(--clr-white);
+  transform: rotate(-90deg);
+}
+main .card .card-inner .box .more::after {
+  position: absolute;
+  content: "";
+  bottom: -1.188rem;
+  right: -0.063rem;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0.313rem 0.313rem 0px 0.313rem var(--clr-white);
+  transform: rotate(-90deg);
+}
+main .card .card-inner .box .more .arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.125rem solid #c8c8c8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+main .card .card-inner .box .more .arrow:hover {
+  background: var(--clr-black);
+  border: 0.125rem solid var(--clr-black);
+  color: var(--clr-white);
+}
+main .card .card-inner .box .more .arrow:hover svg {
+  color: var(--clr-white);
+}
+main .card .card-inner .box .more svg {
+  width: 1.063rem;
+  color: var(--clr-black);
+}
+main .card .card-inner .box .tag {
+  position: absolute;
+  bottom: -0.375rem;
+  left: 0;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--clr-white);
+  padding: 0.625rem 0.625rem 0.625rem 0;
+  border-top-right-radius: 1rem;
+}
+main .card .card-inner .box .tag::before {
+  position: absolute;
+  content: "";
+  top: -1.188rem;
+  left: 0;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: 0.313rem 0.313rem 0px 0.313rem var(--clr-white);
+  transform: rotate(90deg);
+}
+main .card .card-inner .box .tag::after {
+  position: absolute;
+  content: "";
+  bottom: 0.375rem;
+  right: -1.188rem;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0.313rem 0.313rem 0px 0.313rem var(--clr-white);
+  transform: rotate(90deg);
+}
+main .card .card-inner .box .tag a {
+  font-size: 0.8rem;
+  color: var(--clr-black);
+  font-weight: 400;
+  border: 0.125rem solid #c8c8c8;
+  border-radius: 3.125rem;
+  padding: 0.313rem 0.625rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+main .card .card-inner .box .tag a:hover {
+  color: var(--clr-white);
+  background: var(--clr-black);
+  border: 0.125rem solid var(--clr-black);
+}
+main .video {
+  height: 20rem;
+  align-self: flex-end;
+}
+
+.poster {
+  position: relative;
+  display: inline-flex;
+}
+
+.poster:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url("https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  transition: 1s ease;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.poster-active:after {
+  opacity: 0;
+  pointer-events: none;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <main>
+  <div class="heading">
+    <h1>Mountains tours <br />& glamping</h1>
+    <aside>
+      <p>Our tours immerse you in the beauty of the mountains. Enjoy your time with nature choice of guided day hikes.
+      </p>
+      <p>Since 2021</p>
+    </aside>
+  </div>
+  <div class="container">
+    <div class="card">
+      <div class="card-inner">
+        <div class="box">
+          <div class="imgBox">
+            <img src="https://images.unsplash.com/photo-1598601065215-751bf8798a2c?q=80&w=1883&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Awesome views">
+          </div>
+          <div class="more">
+            <ul>
+              <li><img src="https://plus.unsplash.com/premium_photo-1672115680958-54438df0ab82?q=80&w=1784&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></li>
+              <li><img src="https://images.unsplash.com/photo-1600298882283-40b4dcb8b211?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></li>
+              <li><img src="https://plus.unsplash.com/premium_photo-1667987781458-c45c1ad5dfe1?q=80&w=2051&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></li>
+              <li><img src="https://images.unsplash.com/photo-1600298882698-312a4137fd33?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""><span>50+</span></li>
+            </ul>
+          </div>
+          <div class="tag">
+            <a href="#">#Awesome views</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="card video">
+      <div class="card-inner">
+        <div class="box">
+          <div class="videoBox poster">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5D8TBicNIb8?si=x658Sysm10QHsnof&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+          <div class="tag">
+            <a href="#">#Pet friendly</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <p><a href="#">More about tours</a> </p>
+      <div class="card-inner">
+        <div class="box">
+          <div class="imgBox">
+            <img src="https://images.unsplash.com/photo-1501554728187-ce583db33af7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hiking">
+          </div>
+
+          <div class="more">
+            <a href="#" class="arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg></a>
+
+          </div>
+          <div class="tag">
+            <a href="#">#Hiking</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+  
+      <script id="rendered-js" >
+/* inspiration from
+https://dribbble.com/shots/22764492-Travel-website-Tours-and-glamping
+*/
+const poster = document.querySelector(".poster");
+poster.addEventListener("click", removePoster);
+
+function removePoster() {
+  poster.classList.add("poster-active");
+  document.querySelector("#myIframe").src += "?autoplay=1";
+}
+//# sourceURL=pen.js
+    </script>
+
+  
+</body>
+
+</html>
